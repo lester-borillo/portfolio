@@ -3,633 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VA_Lester | Technical Virtual Assistant & AI Automation</title>
+    <title>Edrik Figueroa - GTM Engineer & Automation Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .tool-logo {
-            transition: all 0.3s ease;
-        }
-        
-        .tool-logo:hover {
-            transform: scale(1.1);
-        }
-        
+
         .nav-link {
             position: relative;
         }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #a777e3;
-            transition: width 0.3s ease;
+
+            .nav-link:after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -2px;
+                left: 0;
+                background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover:after {
+                width: 100%;
+            }
+
+        .tool-card {
+            transition: all 0.3s ease;
         }
-        
-        .nav-link:hover::after {
-            width: 100%;
+
+            .tool-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+        .experience-card {
+            transition: all 0.3s ease;
         }
-        
-        .active::after {
-            width: 100%;
+
+            .experience-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="text-xl font-bold text-purple-600">Tech<span class="text-indigo-600">VA</span></span>
-                    </div>
+                    <a href="#" class="text-xl font-bold gradient-text">Edrik Figueroa</a>
                 </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#home" class="nav-link active text-gray-900 px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="#services" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Services</a>
-                    <a href="#tools" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Tools</a>
-                    <a href="#portfolio" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Portfolio</a>
-                    <a href="#testimonials" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Testimonials</a>
-                    <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Get Started</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600">About me</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-blue-600">Education</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600">Experience</a>
+                    <a href="#tools" class="nav-link text-gray-700 hover:text-blue-600">Tools & Works</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
                 </div>
-                <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars"></i>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-gray-100">Home</a>
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Services</a>
-                <a href="#tools" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Tools</a>
-                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Portfolio</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Testimonials</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-purple-600 hover:bg-purple-700">Get Started</a>
-            </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-4 shadow-lg">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About me</a>
+            <a href="#education" class="block py-2 text-gray-700 hover:text-blue-600">Education</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600">Experience</a>
+            <a href="#tools" class="block py-2 text-gray-700 hover:text-blue-600">Tools & Works</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Technical Virtual Assistant & AI Automation Specialist</h1>
-                    <p class="text-xl mb-8 opacity-90">I help businesses automate workflows, streamline operations, and leverage AI to save time and increase productivity using platforms like GoHighLevel, n8n, Make, and Zapier.</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#contact" class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300">Get a Free Consultation</a>
-                        <a href="#portfolio" class="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300">See My Work</a>
-                    </div>
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Edrik Figueroa</h1>
+                <h2 class="text-2xl md:text-3xl gradient-text font-semibold mb-6">GTM Engineer | Automation & Digital Marketing Specialist</h2>
+                <p class="text-lg text-gray-600 mb-8">Marketing automation and CRM specialist with a strong focus on go-to-market strategies, sales funnel optimization, and lead generation.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all">Contact Me</a>
+                    <a href="#tools" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition-all">View Tools</a>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 bg-white rounded-full overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Professional Virtual Assistant" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-purple-600 opacity-20"></div>
-                    </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ri7rmd81wTrZfeLqYTCy/media/67e4e3f31870f431ea40923a.jpeg"
+                     alt="Edrik Figueroa"
+                     class="rounded-2xl shadow-xl w-full max-w-md floating">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">BIO</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        I'm a marketing automation and CRM specialist with a strong focus on go-to-market strategies, sales funnel optimization, and lead generation. As a GTM Engineer, I've worked on configuring and optimizing CRM pipelines, automating workflows, and integrating third-party tools like Zapier, Google Ads, and Facebook Ads. I specialize in platforms like GoHighLevel and Clay.com, helping streamline prospecting and outreach efforts. I thrive on problem-solving, collaborating with teams, and refining strategies to drive scalable growth while ensuring compliance.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-600">MY VISION</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        My vision is to revolutionize marketing automation and CRM optimization by creating seamless, data-driven systems that empower businesses to scale efficiently. I strive to bridge the gap between technology and strategy, leveraging automation, AI, and integrated tools to enhance lead generation, optimize sales funnels, and drive sustainable growth. Through continuous innovation, collaboration, and problem-solving, I aim to help businesses streamline their processes, improve customer engagement, and achieve long-term success in an ever-evolving digital landscape.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-purple-600 mb-2">150+</div>
-                    <div class="text-gray-600">Projects Completed</div>
+    <!-- Education Section -->
+    <section id="education" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Education</h2>
+            <div class="bg-white p-8 rounded-xl shadow-sm max-w-3xl mx-auto">
+                <div class="flex items-start mb-6">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800">Bachelor of Science in Information Technology</h3>
+                        <p class="text-gray-600">Angeles University Foundation, Philippines</p>
+                        <p class="text-gray-500 mt-2">Concentration: Web Development</p>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-indigo-600 mb-2">50+</div>
-                    <div class="text-gray-600">Happy Clients</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-purple-600 mb-2">10K+</div>
-                    <div class="text-gray-600">Automated Tasks</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-indigo-600 mb-2">5+</div>
-                    <div class="text-gray-600">Years Experience</div>
-                </div>
+                <p class="text-gray-600 leading-relaxed">
+                    I earned a Bachelor's Degree in Information Technology from Angeles University Foundation, specializing in web development. I have completed full training programs for GoHighLevel and Clay.com, along with UI/UX training covering HTML5, CSS3, Bootstrap, jQuery, and SEO, as well as expertise in traditional and digital marketing.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">My Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">I specialize in technical automation solutions that help businesses work smarter, not harder.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-robot text-2xl text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Workflow Automation</h3>
-                    <p class="text-gray-600 mb-4">Design and implement custom automation workflows to connect your apps and services, eliminating manual tasks and reducing errors.</p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> CRM automation</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Lead management</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Email sequences</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Data synchronization</li>
-                    </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Work Experiences</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Experience Card 1 -->
+                <div class="experience-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-blue-200">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ri7rmd81wTrZfeLqYTCy/media/67e4bc5d8f002b811c51f852.png"
+                         alt="GTM Engineer"
+                         class="w-16 h-16 object-contain mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">GTM ENGINEER | CRM SPECIALIST</h3>
+                    <p class="text-gray-600">
+                        Spearheaded the implementation of comprehensive tech stacks to optimize business operations, enhance automation, and improve overall efficiency while providing strategic leadership and guidance to the tech team.
+                    </p>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-brain text-2xl text-indigo-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Integration</h3>
-                    <p class="text-gray-600 mb-4">Leverage artificial intelligence to enhance your business processes with smart automation, predictive analytics, and intelligent decision-making.</p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> AI chatbots</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Natural language processing</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Predictive modeling</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Sentiment analysis</li>
-                    </ul>
+
+                <!-- Experience Card 2 -->
+                <div class="experience-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-purple-200">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ri7rmd81wTrZfeLqYTCy/media/67e4d80d8f002b4602523f17.png"
+                         alt="Marketing & Automation"
+                         class="w-16 h-16 object-contain mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-purple-600">MARKETING & AUTOMATION</h3>
+                    <p class="text-gray-600">
+                        Refined and optimized digital marketing technology solutions by implementing seamless CRM integrations and automation, ensuring efficient workflows and enhanced marketing performance.
+                    </p>
                 </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-cogs text-2xl text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">GoHighLevel Expertise</h3>
-                    <p class="text-gray-600 mb-4">Full-service setup, customization, and optimization of your GoHighLevel account to maximize your marketing and sales automation.</p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Funnel creation</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> SMS/email automation</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Calendar scheduling</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> White-label setup</li>
-                    </ul>
+
+                <!-- Experience Card 3 -->
+                <div class="experience-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-blue-200">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ri7rmd81wTrZfeLqYTCy/media/67e4d8771870f47809408150.png"
+                         alt="Tender Submission Officer"
+                         class="w-16 h-16 object-contain mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">TENDER SUBMISSION OFFICER</h3>
+                    <p class="text-gray-600">
+                        Supported one of the largest construction firms in Australia by developing compelling proposals and optimizing marketing strategies to enhance client engagement and business growth.
+                    </p>
                 </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-database text-2xl text-indigo-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Data Management</h3>
-                    <p class="text-gray-600 mb-4">Organize, clean, and migrate your business data between systems with automated processes that ensure accuracy and consistency.</p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Data migration</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Data cleaning</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> API integrations</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Database management</li>
-                    </ul>
+
+                <!-- Experience Card 4 -->
+                <div class="experience-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-purple-200">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ri7rmd81wTrZfeLqYTCy/media/67e4d8cd3792948025e0f18f.svg"
+                         alt="Sales & Marketing Officer"
+                         class="w-16 h-16 object-contain mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-purple-600">SALES & MARKETING OFFICER</h3>
+                    <p class="text-gray-600">
+                        Supported one of the largest real estate firms in New York by crafting impactful proposals and refining marketing strategies to drive client engagement and business expansion. Additionally, led the sales team to maximize profitability by providing essential sales materials and strategic guidance to enhance performance.
+                    </p>
                 </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-2xl text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reporting & Analytics</h3>
-                    <p class="text-gray-600 mb-4">Automate your business reporting with custom dashboards that provide real-time insights into your key performance metrics.</p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Custom dashboards</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> KPI tracking</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Automated reports</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i> Data visualization</li>
-                    </ul>
+
+                <!-- Experience Card 5 -->
+                <div class="experience-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-blue-200">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ri7rmd81wTrZfeLqYTCy/media/67e4d9981870f456854081f8.jpeg"
+                         alt="Business Development & Sales"
+                         class="w-16 h-16 object-contain mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">BUSINESS DEVELOPMENT & SALES</h3>
+                    <p class="text-gray-600">
+                        Delivered high-level technical support for ADSL, Fiber, and VOIP services at one of Australia's largest internet providers for businesses, ensuring reliable connectivity, troubleshooting complex network issues, and optimizing service performance to enhance customer satisfaction and operational efficiency through huddles and business reviews.
+                    </p>
                 </div>
-                
-                <!-- Service 6 -->
-                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-headset text-2xl text-indigo-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Technical Support</h3>
-                    <p class="text-gray-600 mb-4">Ongoing maintenance and troubleshooting for your automation systems to ensure they continue running smoothly.</p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> System monitoring</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Error debugging</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Performance optimization</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Update management</li>
-                    </ul>
+
+                <!-- Experience Card 6 -->
+                <div class="experience-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-purple-200">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Ri7rmd81wTrZfeLqYTCy/media/67e4d9f013c4b60f760c58ec.png"
+                         alt="Customer Service Specialist"
+                         class="w-16 h-16 object-contain mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-purple-600">CUSTOMER SERVICE SPECIALIST</h3>
+                    <p class="text-gray-600">
+                        Delivered exceptional customer service for one of the largest telecommunications companies in the United States, resolving inquiries efficiently, enhancing customer satisfaction, and ensuring a seamless service experience through effective communication and problem-solving.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tools Section -->
-    <section id="tools" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Specialized Tools & Platforms</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">I'm certified and experienced with these powerful automation platforms</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- GoHighLevel -->
-                <div class="tool-logo flex flex-col items-center p-6">
-                    <div class="w-24 h-24 mb-4">
-                        <img src="https://uploads-ssl.webflow.com/5f5a53ed06b6a7a2b8a8d7a3/60b8a7c3c7d1c3c7b6a6a6a6_GoHighLevel%20Logo.png" alt="GoHighLevel" class="w-full h-full object-contain">
+    <section id="tools" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Tools I've Been Using</h2>
+            <p class="text-center text-gray-600 mb-12">List keeps growing</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Graphic Design -->
+                <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-2 rounded-lg mr-3">
+                            <i class="fas fa-paint-brush text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">GRAPHIC DESIGNING</h3>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900">GoHighLevel</h3>
-                    <p class="text-gray-600 text-sm mt-1">Certified Expert</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Adobe Photoshop</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Adobe Illustrator</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Adobe Premiere</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Adobe InDesign</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Adobe After Effects</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Canva</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Midjourney</li>
+                    </ul>
                 </div>
-                
-                <!-- n8n -->
-                <div class="tool-logo flex flex-col items-center p-6">
-                    <div class="w-24 h-24 mb-4">
-                        <img src="https://n8n.io/images/n8n-logo.png" alt="n8n" class="w-full h-full object-contain">
+
+                <!-- Bots | AI | Integration -->
+                <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-lg mr-3">
+                            <i class="fas fa-robot text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">BOTS | AI | INTEGRATION</h3>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900">n8n</h3>
-                    <p class="text-gray-600 text-sm mt-1">Advanced Developer</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Chat GPT</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Deepseek</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Zapier</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Clepher</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> ManyChat</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Make</li>
+                    </ul>
                 </div>
-                
-                <!-- Make -->
-                <div class="tool-logo flex flex-col items-center p-6">
-                    <div class="w-24 h-24 mb-4">
-                        <img src="https://www.make.com/en/images/make-logo.svg" alt="Make" class="w-full h-full object-contain">
+
+                <!-- Leadgen | Nurturing -->
+                <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-2 rounded-lg mr-3">
+                            <i class="fas fa-bullseye text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">LEADGEN | NURTURING</h3>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900">Make</h3>
-                    <p class="text-gray-600 text-sm mt-1">Certified Architect</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Clay</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Apollo</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Lusha</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Muraena</li>
+                    </ul>
                 </div>
-                
-                <!-- Zapier -->
-                <div class="tool-logo flex flex-col items-center p-6">
-                    <div class="w-24 h-24 mb-4">
-                        <img src="https://images.ctfassets.net/lzny33ho1g45/6HrRibQEGQwWkYqY2QYkA0/2b6a2e6c0c9f4b3a1e3e3e3e3e3e3e3e/Zapier-logo.png" alt="Zapier" class="w-full h-full object-contain">
+
+                <!-- Website Hosting | Builder -->
+                <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-2 rounded-lg mr-3">
+                            <i class="fas fa-globe text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">WEBSITE HOSTING | BUILDER</h3>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900">Zapier</h3>
-                    <p class="text-gray-600 text-sm mt-1">Expert Developer</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> GoDaddy</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Wix</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> SquareSpace</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> WordPress</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Shopify</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Hostinger</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Replo</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> GoHighLevel</li>
+                    </ul>
                 </div>
-            </div>
-            
-            <div class="mt-12 bg-gray-50 rounded-xl p-8">
-                <div class="md:flex items-center">
-                    <div class="md:w-2/3 mb-6 md:mb-0">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Need a custom integration?</h3>
-                        <p class="text-gray-600">If you don't see your preferred tool listed here, don't worry! I can work with virtually any API-enabled platform to create custom integrations tailored to your specific needs.</p>
+
+                <!-- Email Marketing | Invoicing -->
+                <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-2 rounded-lg mr-3">
+                            <i class="fas fa-envelope text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">EMAIL MARKETING | INVOICING</h3>
                     </div>
-                    <div class="md:w-1/3 flex justify-center md:justify-end">
-                        <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md text-lg font-semibold transition duration-300">Request Integration</a>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Pipedrive</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Hubspot</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> ActiveCampaign</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> GoHighLevel</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Zoho</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> MailChimp</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> MailDoso</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Instantly</li>
+                    </ul>
+                </div>
+
+                <!-- Other Categories -->
+                <div class="space-y-6">
+                    <!-- Dialers -->
+                    <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                                <i class="fas fa-phone-alt text-indigo-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">DIALERS</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Dialpad</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Mojo</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> VICIdial</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> GoHighLevel</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Skype</li>
+                        </ul>
+                    </div>
+
+                    <!-- Communications -->
+                    <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-pink-100 p-2 rounded-lg mr-3">
+                                <i class="fas fa-comments text-pink-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">COMMUNICATIONS</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Slack</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Discord</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> MS Teams</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Connecteam</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Skype</li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Media Ads -->
+                    <div class="tool-card bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-teal-100 p-2 rounded-lg mr-3">
+                                <i class="fas fa-ad text-teal-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">SOCIAL MEDIA ADS</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Meta Ads Manager</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Google Ads</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> AdEspresso by Hootsuite</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Sprout Social</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> HubSpot Ads Tool</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Recent Projects</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Here are some examples of automation solutions I've created for clients</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-                        <i class="fas fa-calendar-check text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Automated Appointment System</h3>
-                        <p class="text-gray-600 mb-4">Built for a healthcare provider to manage patient appointments across multiple locations with automated reminders and follow-ups.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">GoHighLevel</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Google Calendar</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Twilio</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-teal-400 flex items-center justify-center">
-                        <i class="fas fa-shopping-cart text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Order Processing</h3>
-                        <p class="text-gray-600 mb-4">Automated order fulfillment system connecting Shopify, QuickBooks, and shipping carriers with inventory management.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Make</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Shopify</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">QuickBooks</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-orange-500 to-pink-500 flex items-center justify-center">
-                        <i class="fas fa-users text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">AI-Powered Lead Qualification</h3>
-                        <p class="text-gray-600 mb-4">Implemented AI chatbot to qualify leads before passing them to sales team, reducing response time by 80%.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">GoHighLevel</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">OpenAI</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">n8n</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-300">
-                    See More Case Studies
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">What My Clients Say</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take my word for it - here's what my clients have to say</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900">Michael Johnson</h4>
-                            <p class="text-sm text-gray-600">CEO, Marketing Agency</p>
-                        </div>
-                    </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-600">"The automation systems created for our agency have saved us over 20 hours per week in manual work. Our lead follow-up process is now completely hands-off and much more effective."</p>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900">Sarah Williams</h4>
-                            <p class="text-sm text-gray-600">Founder, E-commerce Store</p>
-                        </div>
-                    </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-600">"Our order processing used to take hours each day. Now it's completely automated with zero errors. The system even handles returns and exchanges automatically. Game changer!"</p>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900">David Chen</h4>
-                            <p class="text-sm text-gray-600">Director, Healthcare Clinic</p>
-                        </div>
-                    </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-600">"The automated patient scheduling system has reduced no-shows by 40% and improved our staff productivity dramatically. The AI-powered follow-up messages are incredibly effective."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="py-16 bg-gradient-to-r from-purple-50 to-indigo-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">My Process</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">A structured approach to ensure your automation project succeeds</p>
-            </div>
-            
-            <div class="relative">
-                <!-- Timeline line -->
-                <div class="hidden md:block absolute left-1/2 h-full w-1 bg-purple-200 transform -translate-x-1/2"></div>
-                
-                <!-- Process steps -->
-                <div class="space-y-8 md:space-y-16">
-                    <!-- Step 1 -->
-                    <div class="relative md:flex items-center">
-                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
-                            <h3 class="text-xl font-bold text-purple-600 mb-2">Discovery</h3>
-                            <p class="text-gray-600">We'll discuss your business needs, pain points, and goals to identify automation opportunities.</p>
-                        </div>
-                        <div class="hidden md:block absolute left-1/2 w-8 h-8 rounded-full bg-purple-600 transform -translate-x-1/2 flex items-center justify-center">
-                            <span class="text-white font-bold">1</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16"></div>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="relative md:flex items-center">
-                        <div class="md:w-1/2 md:pr-16"></div>
-                        <div class="hidden md:block absolute left-1/2 w-8 h-8 rounded-full bg-indigo-600 transform -translate-x-1/2 flex items-center justify-center">
-                            <span class="text-white font-bold">2</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0">
-                            <h3 class="text-xl font-bold text-indigo-600 mb-2">Solution Design</h3>
-                            <p class="text-gray-600">I'll create a detailed automation blueprint showing how all components will work together.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="relative md:flex items-center">
-                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
-                            <h3 class="text-xl font-bold text-purple-600 mb-2">Development</h3>
-                            <p class="text-gray-600">I'll build and test the automation workflows to ensure they meet your requirements.</p>
-                        </div>
-                        <div class="hidden md:block absolute left-1/2 w-8 h-8 rounded-full bg-purple-600 transform -translate-x-1/2 flex items-center justify-center">
-                            <span class="text-white font-bold">3</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16"></div>
-                    </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="relative md:flex items-center">
-                        <div class="md:w-1/2 md:pr-16"></div>
-                        <div class="hidden md:block absolute left-1/2 w-8 h-8 rounded-full bg-indigo-600 transform -translate-x-1/2 flex items-center justify-center">
-                            <span class="text-white font-bold">4</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0">
-                            <h3 class="text-xl font-bold text-indigo-600 mb-2">Deployment</h3>
-                            <p class="text-gray-600">We'll launch the automation and monitor it closely to ensure smooth operation.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 5 -->
-                    <div class="relative md:flex items-center">
-                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
-                            <h3 class="text-xl font-bold text-purple-600 mb-2">Optimization</h3>
-                            <p class="text-gray-600">Continuous improvement based on performance data and your feedback.</p>
-                        </div>
-                        <div class="hidden md:block absolute left-1/2 w-8 h-8 rounded-full bg-purple-600 transform -translate-x-1/2 flex items-center justify-center">
-                            <span class="text-white font-bold">5</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16"></div>
-                    </div>
-                </div>
-            </div>
+    <!-- Graphic Design Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">GRAPHIC DESIGN NEEDS? GOT YOU!</h2>
+            <p class="text-xl mb-8">Check my Behance Profile</p>
+            <a href="https://www.behance.net/edjxlighvaia"
+               class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all inline-block">
+                CHECK MY WORKS NOW!
+            </a>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
-                <div class="mb-12 lg:mb-0">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Let's Automate Your Business</h2>
-                    <p class="text-lg text-gray-600 mb-8">Ready to save time and reduce errors with custom automation? Fill out the form or contact me directly to discuss your project.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                                    <i class="fas fa-envelope text-purple-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-medium text-gray-900">Email</h3>
-                                <p class="text-gray-600">hello@VA_Lester.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center">
-                                    <i class="fas fa-phone-alt text-indigo-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-medium text-gray-900">Phone</h3>
-                                <p class="text-gray-600">+1 (555) 123-4567</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                                    <i class="fas fa-clock text-purple-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-medium text-gray-900">Availability</h3>
-                                <p class="text-gray-600">Monday - Friday, 9am - 5pm EST</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12">
-                        <h3 class="text-lg font-medium text-gray-900 mb-4">Follow Me</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Let's Connect!</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Book an Interview</h3>
+                    <a href="https://calendar.app.google/ZFiVEQrMZdoNYqJ4A"
+                       class="block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 rounded-xl font-medium hover:shadow-lg transition-all text-center mb-6">
+                        <i class="far fa-calendar-alt mr-2"></i> Schedule a Meeting
+                    </a>
+                    <div class="text-center">
+                        <p class="text-gray-600 mb-2">or send an email to:</p>
+                        <a href="mailto:edrik.figueroa123@gmail.com" class="text-blue-600 font-medium text-lg hover:underline">edrik.figueroa123@gmail.com</a>
                     </div>
                 </div>
-                
-                <div>
-                    <form class="space-y-6">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Quick Contact</h3>
+                    <form class="space-y-4">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         </div>
-                        
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         </div>
-                        
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
                         </div>
-                        
-                        <div>
-                            <label for="service" class="block text-sm font-medium text-gray-700">Service Interested In</label>
-                            <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-                                <option>Select a service</option>
-                                <option>Workflow Automation</option>
-                                <option>AI Integration</option>
-                                <option>GoHighLevel Setup</option>
-                                <option>Data Management</option>
-                                <option>Reporting & Analytics</option>
-                                <option>Technical Support</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Tell me about your project</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
-                        </div>
-                        
-                        <div>
-                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300">
-                                Send Message
-                                <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all">
+                            Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -637,51 +458,25 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">VA_Lester</h3>
-                    <p class="text-gray-400">Technical Virtual Assistant & AI Automation services to help your business work smarter.</p>
+    <footer class="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>Copyright © 2025 Edrik Figueroa. All rights reserved.</p>
                 </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Workflow Automation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">AI Integration</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">GoHighLevel Setup</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Data Management</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Subscribe to get automation tips and special offers.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md focus:outline-none text-gray-900 w-full">
-                        <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r-md transition duration-300">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 VA_Lester. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="https://www.linkedin.com/in/edrik-figuer0a/" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -689,89 +484,43 @@
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('menu-btn').addEventListener('click', function () {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    mobileMenu.classList.add('hidden');
-                    
-                    // Scroll to target
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Update active nav link
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                        link.classList.add('text-gray-500');
-                        link.classList.remove('text-gray-900');
-                    });
-                    
-                    this.classList.add('active');
-                    this.classList.remove('text-gray-500');
-                    this.classList.add('text-gray-900');
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
                 }
             });
         });
 
-        // Update active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const scrollPosition = window.scrollY;
-            
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                        link.classList.add('text-gray-500');
-                        link.classList.remove('text-gray-900');
-                        
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                            link.classList.remove('text-gray-500');
-                            link.classList.add('text-gray-900');
-                        }
-                    });
-                }
-            });
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
         });
-
-        // Form submission
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                
-                // Simple validation
-                if (name && email) {
-                    // In a real application, you would send this data to a server
-                    alert(`Thank you, ${name}! Your message has been sent. I'll contact you at ${email} soon.`);
-                    form.reset();
-                } else {
-                    alert('Please fill in all required fields.');
-                }
-            });
-        }
     </script>
 </body>
 </html>
