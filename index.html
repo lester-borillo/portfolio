@@ -591,49 +591,46 @@
                 
                 <div>
 
-                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe13eaVQ5IyVs_TeGu6k9q9JvwBLOT6EiNCGfY8x2pZ1L4qKQ/formResponse" method="POST" target="_blank" class="space-y-6">
+                    <form class="space-y-6">
+                        <form action="https://api.web3forms.com/submit" method="POST"></form>
+                        <input type="hidden" name="access_key" value="8909d74f-00fd-4711-9490-10f1dab46437">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                            <input type="text" id="name" name="entry.16749827" required
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                         </div>
-
+                        
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" id="email" name="entry.934447082" required
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                         </div>
-
+                        
                         <div>
                             <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                            <input type="tel" id="phone" name="entry.1871464989"
-                                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                         </div>
-
+                        
                         <div>
                             <label for="service" class="block text-sm font-medium text-gray-700">Service Interested In</label>
-                            <select id="service" name="entry.792177"
-                                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-                                <option value="">Select a service</option>
-                                <option value="Workflow Automation">Workflow Automation</option>
-                                <option value="AI Integration">AI Integration</option>
-                                <option value="GoHighLevel Setup">GoHighLevel Setup</option>
-                                <option value="Data Management">Data Management</option>
-                                <option value="Reporting & Analytics">Reporting & Analytics</option>
-                                <option value="Technical Support">Technical Support</option>
-                                <option value="Other">Other</option>
+                            <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                                <option>Select a service</option>
+                                <option>Workflow Automation</option>
+                                <option>AI Integration</option>
+                                <option>GoHighLevel Setup</option>
+                                <option>Data Management</option>
+                                <option>Reporting & Analytics</option>
+                                <option>Technical Support</option>
+                                <option>Other</option>
                             </select>
                         </div>
-
+                        
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700">Tell me about your project</label>
-                            <textarea id="message" name="entry.129486234" rows="4"
-                                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
                         </div>
-
+                        
                         <div>
-                            <button type="submit"
-                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300">
                                 Send Message
                                 <i class="fas fa-paper-plane ml-2"></i>
                             </button>
@@ -785,6 +782,7 @@
 </body>
 
 </html>
+
 
 
 
