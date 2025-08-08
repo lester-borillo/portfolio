@@ -53,6 +53,83 @@
         .active::after {
             width: 100%;
         }
+
+        /* Contact form styles */
+        .contact-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .contact-description {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #718096;
+        }
+
+        .form-group-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .form-group-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .form-input,
+        .form-textarea {
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            color: #4a5568;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: #805ad5;
+            outline: none;
+        }
+
+        .form-submit {
+            padding: 0.75rem;
+            background-color: #805ad5;
+            color: #fff;
+            font-weight: 500;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-submit:hover {
+            background-color: #6b46c1;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -248,23 +325,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Specialized Tools & Platforms</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">I'm certified and experienced with these powerful automation platforms</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">I'm experienced with these powerful automation platforms</p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <!-- GoHighLevel -->
                 <div class="tool-logo flex flex-col items-center p-6">
                     <div class="w-24 h-24 mb-4">
-                        <img src="https://uploads-ssl.webflow.com/5f5a53ed06b6a7a2b8a8d7a3/60b8a7c3c7d1c3c7b6a6a6a6_GoHighLevel%20Logo.png" alt="GoHighLevel" class="w-full h-full object-contain">
+                        <img src="https://raw.githubusercontent.com/lester-borillo/portfolio/refs/heads/master/ghl.png" alt="GoHighLevel" class="w-full h-full object-contain">
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900">GoHighLevel</h3>
-                    <p class="text-gray-600 text-sm mt-1">Certified Expert</p>
+                    <p class="text-gray-600 text-sm mt-1">Experienced Developer</p>
                 </div>
                 
                 <!-- n8n -->
                 <div class="tool-logo flex flex-col items-center p-6">
                     <div class="w-24 h-24 mb-4">
-                        <img src="https://n8n.io/images/n8n-logo.png" alt="n8n" class="w-full h-full object-contain">
+                        <img src="https://raw.githubusercontent.com/lester-borillo/portfolio/refs/heads/master/n8n.png" alt="n8n" class="w-full h-full object-contain">
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900">n8n</h3>
                     <p class="text-gray-600 text-sm mt-1">Advanced Developer</p>
@@ -273,19 +350,19 @@
                 <!-- Make -->
                 <div class="tool-logo flex flex-col items-center p-6">
                     <div class="w-24 h-24 mb-4">
-                        <img src="https://www.make.com/en/images/make-logo.svg" alt="Make" class="w-full h-full object-contain">
+                        <img src="https://raw.githubusercontent.com/lester-borillo/portfolio/refs/heads/master/make.png" alt="Make" class="w-full h-full object-contain">
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900">Make</h3>
-                    <p class="text-gray-600 text-sm mt-1">Certified Architect</p>
+                    <p class="text-gray-600 text-sm mt-1">Developer</p>
                 </div>
                 
                 <!-- Zapier -->
                 <div class="tool-logo flex flex-col items-center p-6">
                     <div class="w-24 h-24 mb-4">
-                        <img src="https://images.ctfassets.net/lzny33ho1g45/6HrRibQEGQwWkYqY2QYkA0/2b6a2e6c0c9f4b3a1e3e3e3e3e3e3e3e/Zapier-logo.png" alt="Zapier" class="w-full h-full object-contain">
+                        <img src="https://raw.githubusercontent.com/lester-borillo/portfolio/refs/heads/master/zapier.png" alt="Zapier" class="w-full h-full object-contain">
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900">Zapier</h3>
-                    <p class="text-gray-600 text-sm mt-1">Expert Developer</p>
+                    <p class="text-gray-600 text-sm mt-1">Developer</p>
                 </div>
             </div>
             
@@ -355,7 +432,8 @@
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">GoHighLevel</span>
                             <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">OpenAI</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">n8n</span>
+                            <span class="bg-gray-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">n8n</span>
+                            <span class="bg-gray-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">botcake</span>
                         </div>
                     </div>
                 </div>
@@ -526,113 +604,43 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
-                <div class="mb-12 lg:mb-0">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Let's Automate Your Business</h2>
-                    <p class="text-lg text-gray-600 mb-8">Ready to save time and reduce errors with custom automation? Fill out the form or contact me directly to discuss your project.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                                    <i class="fas fa-envelope text-purple-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-medium text-gray-900">Email</h3>
-                                <p class="text-gray-600">hello@techva.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center">
-                                    <i class="fas fa-phone-alt text-indigo-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-medium text-gray-900">Phone</h3>
-                                <p class="text-gray-600">+1 (555) 123-4567</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                                    <i class="fas fa-clock text-purple-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-medium text-gray-900">Availability</h3>
-                                <p class="text-gray-600">Monday - Friday, 9am - 5pm EST</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12">
-                        <h3 class="text-lg font-medium text-gray-900 mb-4">Follow Me</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-300">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
+            <!-- REPLACED CONTACT FORM START -->
+            <section class="contact-section">
+              <div class="contact-intro">
+                <h2 class="contact-title">Get in Touch</h2>
+                <p class="contact-description">
+                  Fill out the form below and we'll get back to you as soon as possible.
+                </p>
+              </div>
+
+              <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="8909d74f-00fd-4711-9490-10f1dab46437" />
+                <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+                <input type="hidden" name="from_name" value="My Website" />
+
+                <div class="form-group-container">
+                  <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+                  </div>
+                  <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+                  </div>
                 </div>
-                
-                <div>
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-                        </div>
-                        
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-                        </div>
-                        
-                        <div>
-                            <label for="service" class="block text-sm font-medium text-gray-700">Service Interested In</label>
-                            <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-                                <option>Select a service</option>
-                                <option>Workflow Automation</option>
-                                <option>AI Integration</option>
-                                <option>GoHighLevel Setup</option>
-                                <option>Data Management</option>
-                                <option>Reporting & Analytics</option>
-                                <option>Technical Support</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Tell me about your project</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
-                        </div>
-                        
-                        <div>
-                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300">
-                                Send Message
-                                <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                <button class="form-submit" type="submit">Send Message</button>
+              </form>
+            </section>
+            <!-- REPLACED CONTACT FORM END -->
         </div>
     </section>
 
@@ -752,30 +760,23 @@
             });
         });
 
-        // Form submission
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                
-                // Simple validation
-                if (name && email) {
-                    // In a real application, you would send this data to a server
-                    alert(`Thank you, ${name}! Your message has been sent. I'll contact you at ${email} soon.`);
+        // Only prevent default for the newsletter form, not the contact form
+        document.querySelectorAll('form').forEach(form => {
+            // If it's the newsletter form (no action attribute), prevent default
+            if (!form.getAttribute('action')) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // You can add newsletter AJAX logic here if needed
+                    alert('Thank you for subscribing!');
                     form.reset();
-                } else {
-                    alert('Please fill in all required fields.');
-                }
-            });
-        }
+                });
+            }
+        });
     </script>
 </body>
 
 </html>
+
 
 
 
